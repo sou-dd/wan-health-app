@@ -28,9 +28,11 @@ st.dataframe(df)
 import plotly.express as px
 st.subheader("📈 体重の推移")
 if not df.empty:
+    mport plotly.express as px
+
+st.subheader("📈 体重の推移")
+if not df.empty:
     df["日付"] = pd.to_datetime(df["日付"])
-    plt.plot(df["日付"], df["体重"], marker='o')
-    plt.xlabel("日付")
-    plt.ylabel("体重(kg)")
-    plt.xticks(rotation=45)
-    st.pyplot(plt)
+    fig = px.line(df, x="日付", y="体重", markers=True, title="わんちゃんの体重推移")
+    fig.update_layout(xaxis_title="日付", yaxis_title="体重 (kg)", xaxis_tickangle=-45)
+    st.plotly_chart(fig, use_container_width=True)
