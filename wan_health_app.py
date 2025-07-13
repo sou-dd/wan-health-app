@@ -25,7 +25,7 @@ if st.button("記録する"):
 # 表とグラフ
 st.subheader("📊 記録一覧")
 st.dataframe(df)
-
+import matplotlib.pyplot as plt
 st.subheader("📈 体重の推移")
 if not df.empty:
     df["日付"] = pd.to_datetime(df["日付"])
