@@ -28,7 +28,7 @@ st.dataframe(df)
 import plotly.express as px
 st.subheader("📈 体重の推移")
 if not df.empty:
-    mport plotly.express as px
+    import plotly.express as px
 
 st.subheader("📈 体重の推移")
 if not df.empty:
