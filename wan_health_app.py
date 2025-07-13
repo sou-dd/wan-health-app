@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-import matplotlib.pyplot as plt
 from datetime import date
 
 st.title("🐶 わんちゃん健康管理アプリ")
