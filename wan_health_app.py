@@ -25,9 +25,6 @@ if st.button("記録する"):
 # 表とグラフ
 st.subheader("📊 記録一覧")
 st.dataframe(df)
-import plotly.express as px
-st.subheader("📈 体重の推移")
-if not df.empty:
     import plotly.express as px
 
 st.subheader("📈 体重の推移")
