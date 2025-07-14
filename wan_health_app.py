@@ -2,11 +2,7 @@ import streamlit as st
 import pandas as pd
 from datetime import date
 
-
-    # ログイン後の本体コード（ここに今までの記録・グラフなどを入れる）
-    
-
-     st.title("ワンちゃん健康管理アプリ")
+st.title("ワンちゃん健康管理アプリ")
 
 try:
     df = pd.read_csv("wan_health")
