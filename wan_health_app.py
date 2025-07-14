@@ -11,7 +11,7 @@ if "logged_in" not in st.session_state or not st.session_state.logged_in:
 st.title("ワンちゃん健康管理アプリ")
 
 # ログアウトボタン
-if st.button("ログアウト")
+if st.button("ログアウト"):
      for key in ["logged_in","user_id"]:
          st.session_state.pop(key,None)
      st.switch_page("Home")
