@@ -2,13 +2,44 @@ import streamlit as st
 import pandas as pd
 from datetime import date
 
-st.title("🐶 わんちゃん健康管理アプリ")
+# セッション変数の初期化
+if "logged_in" not in st.session_state:
+    st.session_state.logged_in = False
 
-# CSVから読み込み
+# ログアウト処理
+if st.session_state.logged_in:
+    if st.button("ログアウト"):
+        st.session_state.logged_in = False
+        st.experimental_rerun()
+
+# ログインしていない場合はログイン画面
+if not st.session_state.logged_in:
+     st.title("ログイン")
+    　user_id = st.text_input("ユーザーID")
+      password = st.text_input("パスワード" , type="password")
+
+      if st.button("ログイン")
+　　　　　　　# (ここではCSVから読みこむ仮処理、あとでlogin.pyを使うのも可)
+　　　　　　  try:
+                  df_users = pd.read_csv("user_data/users.csv")
+                  user = df_users[(df_users["users_id"] == user_id) & (df_users["password"] == password)]
+                  if not user.empty:
+                      st.session_state.logged_in = True
+                      st.session_state.user_id = user_id
+                      st.session_state.user_mode = user.iloc[0]["mode"]
+                      st.experimental_rerun()
+                  else:
+                      st.error("IDかパスワードが違います")
+        except FileNotFoundError:
+            st.error("ユーザーが登録されていません")
+else:
+    # ログイン後の本体コード（ここに今までの記録・グラフなどを入れる）
+    st.title("ワンちゃん健康管理アプリ")
+
 try:
-    df = pd.read_csv("wan_health.csv")
+    df = pd.read_csv("wan_health")
 except FileNotFoundError:
-    df = pd.DataFrame(columns=["日付", "体重", "体調"])
+     df = pd.DataFrame(columns=["日付", "体重", "体調"])
 
 # 入力フォーム
 st.subheader("📋 今日の記録を入力")
