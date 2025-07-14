@@ -31,8 +31,8 @@ if st.button("ログイン"):
      else:
           st.error("IDかパスワードが違います")
   except FileNotFoundError:
-           st.error("ユーザーが登録されていません")
-else:
+      st.error("ユーザーが登録されていません")
+ else:
      # ログイン後の本体コード（ここに今までの記録・グラフなどを入れる）
      st.title("ワンちゃん健康管理アプリ")
 
