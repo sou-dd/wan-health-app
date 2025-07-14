@@ -15,7 +15,7 @@ if st.session_state.logged_in:
 # ログインしていない場合はログイン画面
 if not st.session_state.logged_in:
      st.title("ログイン")
-    　user_id = st.text_input("ユーザーID")
+    　user_id = st.text_input("ユーザーid")
       password = st.text_input("パスワード" , type="password")
 
       if st.button("ログイン")
