@@ -9,13 +9,13 @@ if "logged_in" not in st.session_state:
 # ログアウト処理
 if st.session_state.logged_in:
     if st.button("ログアウト"):
-        st.session_state.logged_in = False
-        st.experimental_rerun()
+       st.session_state.logged_in = False
+       st.experimental_rerun()
 
 # ログインしていない場合はログイン画面
 if not st.session_state.logged_in:
-     st.title("ログイン")
-    　user_id = st.text_input("ユーザーid")
+      st.title("ログイン")
+    　user_id = st.text_input("ユーザーID")
       password = st.text_input("パスワード" , type="password")
 
       if st.button("ログイン")
