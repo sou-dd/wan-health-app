@@ -23,11 +23,11 @@ if st.button("ログイン"):
  try:
     df_users = pd.read_csv("user_data/users.csv")
     user = df_users[(df_users["users_id"] == user_id) & (df_users["password"] == password)]
- if not user.empty:
-     st.session_state.logged_in = True
-     st.session_state.user_id = user_id
-     st.session_state.user_mode = user.iloc[0]["mode"]
-     st.experimental_rerun()
+if not user.empty:
+    st.session_state.logged_in = True
+    st.session_state.user_id = user_id
+    st.session_state.user_mode = user.iloc[0]["mode"]
+    st.experimental_rerun()
     else:
          st.error("IDかパスワードが違います")
 except FileNotFoundError:
