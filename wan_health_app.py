@@ -28,8 +28,8 @@ if not user.empty:
     st.session_state.user_id = user_id
     st.session_state.user_mode = user.iloc[0]["mode"]
     st.experimental_rerun()
-else:
-     st.error("IDかパスワードが違います")
+    else:
+         st.error("IDかパスワードが違います")
 except FileNotFoundError:
    st.error("ユーザーが登録されていません")
 else:
