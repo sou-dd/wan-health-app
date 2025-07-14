@@ -2,10 +2,23 @@ import streamlit as st
 import pandas as pd
 from datetime import date
 
+#ログイン確認
+if "logged_in" not in st.session_state or not st.session_state.logged_in:
+    st.warning("先にログインしてください")
+    st.switch_page("page1_ログイン.py")
+
+# タイトル
 st.title("ワンちゃん健康管理アプリ")
 
+# ログアウトボタン
+if st.button("ログアウト")
+     for key in ["logged_in","user_id"]:
+         st.session_state.pop(key,None)
+     st.switch_page("Home")
+
+# データ読み込み
 try:
-    df = pd.read_csv("wan_health")
+    df = pd.read_csv("wan_health.csv")
 except FileNotFoundError:
      df = pd.DataFrame(columns=["日付", "体重", "体調"])
 
