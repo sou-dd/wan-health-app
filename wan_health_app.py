@@ -18,7 +18,7 @@ if not st.session_state.logged_in:
     user_id = st.text_input("ユーザーID")
     password = st.text_input("パスワード" , type="password")
 
-      if st.button("ログイン"):
+if st.button("ログイン"):
 　　　　　　　# (ここではCSVから読みこむ仮処理、あとでlogin.pyを使うのも可)
 　　　　　　  try:
                   df_users = pd.read_csv("user_data/users.csv")
