@@ -15,7 +15,7 @@ if st.button("ログイン"):
         st.session_state.logged_in = True
         st.session_state.user_id = username
         st.success("ログイン成功")
-        st.swith_page("wan_health_app.py") # 成功したら遷移
+        st.switch_page("wan_health_app.py") # 成功したら遷移
     else:
          st.error("IDかパスワードが間違っています")
 
