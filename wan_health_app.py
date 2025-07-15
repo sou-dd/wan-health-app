@@ -5,7 +5,7 @@ from datetime import date
 #ログイン確認
 if "logged_in" not in st.session_state or not st.session_state.logged_in:
     st.warning("先にログインしてください")
-    st.switch_page("pages1_ログイン.py")
+    st.switch_page("ログイン.py")
 
 # タイトル
 st.title("ワンちゃん健康管理アプリ")
