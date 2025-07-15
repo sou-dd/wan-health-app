@@ -5,7 +5,7 @@ from datetime import date
 #ログイン確認
 if "logged_in" not in st.session_state or not st.session_state.logged_in:
     st.warning("先にログインしてください")
-    st.switch_page("ログイン.py")
+    st.switch_page("1_ログイン.py")
 
 # タイトル
 st.title("ワンちゃん健康管理アプリ")
@@ -14,7 +14,7 @@ st.title("ワンちゃん健康管理アプリ")
 if st.button("ログアウト"):
      for key in ["logged_in","user_id"]:
          st.session_state.pop(key,None)
-     st.switch_page("Home")
+     st.switch_page("1_ログイン.py")
 
 # データ読み込み
 try:
